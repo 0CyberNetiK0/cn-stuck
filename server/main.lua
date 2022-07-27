@@ -1,25 +1,3 @@
-ESX, QBCore = nil, nil, {}, true
-
-Citizen.CreateThread(function()
-    if Config.Framework == 'esx' then
-        print("^4[CANARY]^0 - ESX Framework Loaded")
-        while ESX == nil do
-            TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-            Citizen.Wait(100)
-        end
-    elseif Config.Framework == 'qbcore' then
-        print("^4[CANARY]^0 - QBCore Framework Loaded")
-        local QBCore = exports['qb-core']:GetCoreObject()
-    end
-    if Config.Framework == 'oldqbcore' then
-        print("^4[CANARY]^0 - OLD QBCore Framework Loaded")
-        if QBCore == nil then
-            TriggerEvent("QBCore:GetObject", function(obj) QBCore = obj end)
-            Citizen.Wait(200)
-        end
-    end
-end)
-
 function ExtractIdentifiers(src)
     local identifiers = {
         steam = "",
@@ -49,7 +27,6 @@ function ExtractIdentifiers(src)
     return identifiers
 end
 
-local webhook = "Your Discord Webhook"
 local message = '**Player used /stuck command in server**'
 local color = 1146986
 

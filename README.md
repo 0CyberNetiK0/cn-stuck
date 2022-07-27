@@ -3,9 +3,7 @@
 # cn-stuck
 If you're stuck in a dungeon or somewhere, use /stuck to get out!
 
-Script was made for 3 framework ESX, QBCore and OLD QBCore
-
-If you are using ESX you need to download this standalone progressbar!
+Script was made for standalone so for any framework available
 
 https://forum.cfx.re/t/release-progress-bars-1-0-standalone/526287
 

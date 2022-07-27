@@ -78,15 +78,3 @@ AddEventHandler("cn-stuck:DiscordNotify", function()
     local identifierDb
     SendDiscordNotify(_source, message, color_msg,identifier)
 end)
-
-RegisterServerEvent('cn-stuck:SendImage')
-AddEventHandler("cn-stuck:SendImage", function()
-    if Config.SendMessages == 'true' then
-        exports['screenshot-basic']:requestScreenshotUpload(Config.Webhook, 'files[]', {encoding = 'jpg'}, function(data)
-            local resp = json.decode(data)
-            table.insert(resp.attachments[1].url)
-        end)
-    elseif Config.SendMessages == 'false' then
-        print("^4[CANARY]^0 - Image sending was disabled in script config so image wasnt sended!")
-    end
-end)

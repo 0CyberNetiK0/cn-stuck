@@ -11,9 +11,9 @@ AddEventHandler('cn-stuck:PlayerTeleport', function()
     while not IsScreenFadedOut() do
        Wait(0)
     end
-    SetEntityCoords(GetPlayerPed(-1), Config.TeleportLocation.x, Config.TeleportLocation.y, Config.TeleportLocation.z)
-    Notif("You were teleported to ground")
+    SetEntityCoords(PlayerPedId(-1), Config.TeleportLocation.x, Config.TeleportLocation.y, Config.TeleportLocation.z)
     DoScreenFadeIn(650)
+    Notif("You were teleported to ground")
     TriggerEvent('cn-stuck:SendImage')
 end)
 
